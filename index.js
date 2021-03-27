@@ -84,6 +84,49 @@ const questions = () => {
                 }
             }
         },
+        {
+            type: 'list',
+            name: 'license-list',
+            message: 'Provide the type of license for your project',
+            choices: ['MIT, Apache, GPL'],
+            validate: licenseInput => {
+                if (licenseInput) {
+                    return true;
+                    // renderLicenseBadge(license);
+                } else {
+                    console.log('Please provide a license for your project!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'github-username',
+            message: 'Please enter your GitHub username',
+            validate: usernameInput => {
+                if (usernameInput) {
+                    return true;
+                } else {
+                    console.log('Please provide your GitHub username!');
+                    return false;
+                }
+            }
+        },
+
+        {
+            type: 'input',
+            name: 'email-address',
+            message: 'Please enter your email address',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please provide your email address!');
+                    return false;
+                }
+            }
+        },
+
     ]);
 };
 questions().then(answers => console.log(answers));
