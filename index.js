@@ -1,8 +1,10 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const inquirer = require('inquirer');
+const fs = require('fs');
+const generatePage = require ('./src/template.js')
 
-// const { }
-// TODO: Create an array of questions for user input
+ 
+// Array of questions for user input
 const questions = () => {
     return inquirer.prompt([
         {
@@ -73,7 +75,7 @@ const questions = () => {
 
         {
             type: 'input',
-            name: 'test-instructions',
+            name: 'instructions',
             message: 'Provide the test instructions for your project',
             validate: testInsInput => {
                 if (testInsInput) {
@@ -84,17 +86,59 @@ const questions = () => {
                 }
             }
         },
+        {
+            type: 'list',
+            name: 'license',
+            message: 'Provide the type of license for your project',
+            choices: ['mit', 'unlicense'],
+            validate: licenseInput => {
+                if (licenseInput) {
+                    return true;
+                
+                } else {
+                    console.log('Please provide a license for your project!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'username',
+            message: 'Please enter your GitHub username',
+            validate: usernameInput => {
+                if (usernameInput) {
+                    return true;
+                } else {
+                    console.log('Please provide your GitHub username!');
+                    return false;
+                }
+            }
+        },
+
+        {
+            type: 'input',
+            name: 'emailaddress',
+            message: 'Please enter your email address',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please provide your email address!');
+                    return false;
+                }
+            }
+        },
+
     ]);
 };
-questions().then(answers => console.log(answers));
 
+// Function to write file 
 
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
-
-// TODO: Create a function to initialize app
-function init() { }
-
-// Function call to initialize app
-init();
+questions()
+.then(projectData => {
+    generateReadMe = generatePage(projectData);
+    fs.writeFile('./README.md', generateReadMe, err => {
+        if (err) throw new Error(err);
+        console.log('README successfully generated!');
+    });
+});
