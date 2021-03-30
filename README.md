@@ -3,7 +3,7 @@
 ![badge](https://img.shields.io/badge/license-mit-blue.svg)
 
 ## Description
-Description  
+This is a command-line application that generates a professional README based on the input received from the user on the command line. It was created using Node.js to help anyone who wishes to create a professional README to accompany a project. 
 
 ## Table of Contents
 * [Installation](#installation)
