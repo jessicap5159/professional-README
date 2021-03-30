@@ -4,9 +4,10 @@ module.exports = generatePage;
 
 function generatePage(userAnswers) {
     return `
-## ${userAnswers.title}  
+# ${userAnswers.title}  
+![badge](https://img.shields.io/badge/license-${userAnswers.license}-blue.svg)
 
-# Description 
+## Description
 ${userAnswers.description}  
 
 ## Table of Contents
@@ -18,26 +19,25 @@ ${userAnswers.description}
 * [Questions](#Questions)
   
 
-# Installation
+## Installation
 ${userAnswers.installation}  
 
 
-# Usage
+## Usage
 ${userAnswers.usage}  
 
 
-# License
-![badge](https://img.shields.io/badge/license-${userAnswers.license}-blue.svg)
-Project covered under ${userAnswers.license} license: (choosealicense.com/licenses/${userAnswers.license})
+## License
 
+Project covered under ${userAnswers.license} license: choosealicense.com/licenses/${userAnswers.license}
 
-# Contributing
+## Contributing
 ${userAnswers.contribution}  
 
-# Tests
+## Tests
 ${userAnswers.instructions}  
 
-# Questions  
+## Questions  
 
 GitHub: github.com/${userAnswers.username} 
 

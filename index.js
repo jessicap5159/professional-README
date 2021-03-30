@@ -89,7 +89,7 @@ const questions = () => {
             type: 'list',
             name: 'license',
             message: 'Provide the type of license for your project',
-            choices: ['MIT', 'Apache 2.0', 'GPL', '2-Clause BSD', '3-Clause BSD', 'GNU General Public License', 'GNU Lesser General Public License', 'Mozilla Public License 2.0', 'Common Development and Distribution License 1.0', 'Eclipse Public License 2.0'],
+            choices: ['mit', 'apache-2.0', 'agpl-3.0', 'gpl-3.0', 'lgpl-3.0', 'mpl-2.0', 'apache-2.0', 'bsl-1.0', 'unlicense'],
             validate: licenseInput => {
                 if (licenseInput) {
                     return true;
