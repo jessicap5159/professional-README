@@ -1,7 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const fs = require('fs');
+const generatePage = require ('./src/template.js')
 
-// const { }
 // TODO: Create an array of questions for user input
 const questions = () => {
     return inquirer.prompt([
@@ -73,7 +74,7 @@ const questions = () => {
 
         {
             type: 'input',
-            name: 'test-instructions',
+            name: 'instructions',
             message: 'Provide the test instructions for your project',
             validate: testInsInput => {
                 if (testInsInput) {
@@ -86,13 +87,13 @@ const questions = () => {
         },
         {
             type: 'list',
-            name: 'license-list',
+            name: 'license',
             message: 'Provide the type of license for your project',
             choices: ['MIT', 'Apache 2.0', 'GPL', '2-Clause BSD', '3-Clause BSD', 'GNU General Public License', 'GNU Lesser General Public License', 'Mozilla Public License 2.0', 'Common Development and Distribution License 1.0', 'Eclipse Public License 2.0'],
             validate: licenseInput => {
                 if (licenseInput) {
                     return true;
-                    // renderLicenseBadge(license);
+                
                 } else {
                     console.log('Please provide a license for your project!');
                     return false;
@@ -101,7 +102,7 @@ const questions = () => {
         },
         {
             type: 'input',
-            name: 'github-username',
+            name: 'username',
             message: 'Please enter your GitHub username',
             validate: usernameInput => {
                 if (usernameInput) {
@@ -115,7 +116,7 @@ const questions = () => {
 
         {
             type: 'input',
-            name: 'email-address',
+            name: 'emailaddress',
             message: 'Please enter your email address',
             validate: emailInput => {
                 if (emailInput) {
@@ -129,17 +130,23 @@ const questions = () => {
 
     ]);
 };
-questions().then(answers => console.log(answers));
+// questions().then(answers => console.log(answers));
 
 
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
+// // TODO: Create a function to write README file
+// function writeToFile(fileName, data) { }
 
-// TODO: Create a function to initialize app
-function init() { }
+// // TODO: Create a function to initialize app
+// function init() { }
 
-// Function call to initialize app
-init();
+// // Function call to initialize app
+// init();
 
-// test comment
+questions().then(projectData => {
+    generateReadMe = generatePage(projectData);
+    fs.writeFile('./README.md', generateReadMe, err => {
+        if (err) throw new Error(err);
+        console.log('README successfully generated!');
+    });
+});

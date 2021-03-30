@@ -1,88 +1,50 @@
-// create title section 
-const generateTitle = titleText => {
-    if (!titleText) {
-        return '';
-    }
-    return `
-        #${titleText}
-    `
-}
-// create description section
-const generateDesc = descText => {
-    if (!descText) {
-        return '';
-    }
-    return `
-        ## Description
-        ${descText}
-    `
-}
-// create table of contents
-const generateContents = contentsText => {
-    if (!contentsText) {
-        return '';
-    }
-    return `
-    ## Table of Contents
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [License](#license)
-    * [Contributing](#contributing)
-    * [Test](#test)
-    * [Questions](#Questions)
-    
-    `
-}
-// create installation section
-const generateInstallInstructs = installText => {
-    if (!installText) {
-        return '';
-    }
-    return `
-        ## Installation
-        ${installText}
-    `
-}
-// create usage section
-const generateUsage = usageText => {
-    if (!usageText) {
-        return '';
-    }
-    return `
-        ## Usage
-        ${usageText}
-    `
-}
-// license section is in generateMarkdown.js
+// Make into one function
 
-// create contributions section
-const generateContributions = contributionsText => {
-    if (!contributionsText) {
-        return '';
-    }
+module.exports = generatePage;
+
+function generatePage(userAnswers) {
     return `
-        ## Contributing
-        ${contributionsText}
-    `
+## ${userAnswers.title}  
+
+# Description 
+${userAnswers.description}  
+
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Test](#test)
+* [Questions](#Questions)
+  
+
+# Installation
+${userAnswers.installation}  
+
+
+# Usage
+${userAnswers.usage}  
+
+
+# License
+![badge](https://img.shields.io/badge/license-${userAnswers.license}-blue.svg)
+Project covered under ${userAnswers.license} license: (choosealicense.com/licenses/${userAnswers.license})
+
+
+# Contributing
+${userAnswers.contribution}  
+
+# Tests
+${userAnswers.instructions}  
+
+# Questions  
+
+GitHub: github.com/${userAnswers.username} 
+
+Please email me with additional questions: ${userAnswers.emailaddress}
+
+`
 }
-// create tests section
-const generateTestsSection = testsSectionText => {
-    if (!testsSectionText) {
-        return '';
-    }
-    return `
-        ## Tests
-        ${testsSectionText}
-    `
-}
-// create questions section
-    const generateQuestionsSection = questionsSectionText => {
-        if (!testsSquestionsSectionTextctionText) {
-            return '';
-        }
-        return `
-            ## Questions
-            GitHub username: 
-            Please contact me with any questions at: 
-        `
-    }
+
+    //  ![badge] (link from shields.io ${userAnswers.license})
+    // Project covered under ${userAnswers.license} choosealicense.cometc/${userAnswers.license}
