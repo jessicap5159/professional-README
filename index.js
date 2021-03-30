@@ -1,9 +1,10 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generatePage = require ('./src/template.js')
 
-// TODO: Create an array of questions for user input
+ 
+// Array of questions for user input
 const questions = () => {
     return inquirer.prompt([
         {
@@ -89,7 +90,7 @@ const questions = () => {
             type: 'list',
             name: 'license',
             message: 'Provide the type of license for your project',
-            choices: ['mit', 'apache-2.0', 'agpl-3.0', 'gpl-3.0', 'lgpl-3.0', 'mpl-2.0', 'apache-2.0', 'bsl-1.0', 'unlicense'],
+            choices: ['mit', 'unlicense'],
             validate: licenseInput => {
                 if (licenseInput) {
                     return true;
@@ -130,20 +131,11 @@ const questions = () => {
 
     ]);
 };
-// questions().then(answers => console.log(answers));
 
+// Function to write file 
 
-
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) { }
-
-// // TODO: Create a function to initialize app
-// function init() { }
-
-// // Function call to initialize app
-// init();
-
-questions().then(projectData => {
+questions()
+.then(projectData => {
     generateReadMe = generatePage(projectData);
     fs.writeFile('./README.md', generateReadMe, err => {
         if (err) throw new Error(err);

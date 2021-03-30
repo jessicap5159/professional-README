@@ -1,6 +1,9 @@
-// Make into one function
+// Module needed to export file
 
 module.exports = generatePage;
+
+
+// Function to generate page and template for page
 
 function generatePage(userAnswers) {
     return `
@@ -15,7 +18,7 @@ ${userAnswers.description}
 * [Usage](#usage)
 * [License](#license)
 * [Contributing](#contributing)
-* [Test](#test)
+* [Tests](#tests)
 * [Questions](#Questions)
   
 
@@ -46,5 +49,3 @@ Please email me with additional questions: ${userAnswers.emailaddress}
 `
 }
 
-    //  ![badge] (link from shields.io ${userAnswers.license})
-    // Project covered under ${userAnswers.license} choosealicense.cometc/${userAnswers.license}

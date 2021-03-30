@@ -1,40 +1,40 @@
 
-# fjsdklfjdskfsjfklsdjfkldsfjsd  
+# Jessica's Project  
 ![badge](https://img.shields.io/badge/license-mit-blue.svg)
 
 ## Description
-fjdkslfjdasklfjdsfklsdjfklsadfjdsjfkasdlwejgfiorgrueibrdugna  
+Description  
 
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
 * [Contributing](#contributing)
-* [Test](#test)
+* [Tests](#tests)
 * [Questions](#Questions)
   
 
 ## Installation
-sklfjaweiofghewairohwsfoskjnfgklasfgjsaklfjsaklfgjsakfgjsdkfdsjfklsdkjflsfjks  
+Instructions  
 
 
 ## Usage
-fjskdfhaweiuogherwuiagbarsuigharslkgjdsklagjadfklgjdfklgdjkgdgagdssdagdsgafdsgfd  
+Usage  
 
 
 ## License
 
-Project covered under agpl-3.0 license: choosealicense.com/licenses/agpl-3.0
+Project covered under mit license: choosealicense.com/licenses/mit
 
 ## Contributing
-fjsdifhwaeioughewrugbenvjckxhgjfekdc  
+COntribution  
 
 ## Tests
-hgwierfghasoigbdfjsgv  
+Test instructions  
 
 ## Questions  
 
-GitHub: github.com/jsdfsdfds 
+GitHub: github.com/username 
 
-Please email me with additional questions: sfjkslfk
+Please email me with additional questions: jessicaj5159@gmail.com
 
