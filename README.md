@@ -8,29 +8,26 @@ Description
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
+* [Credits](#credits)
 * [License](#license)
 * [Contributing](#contributing)
-* [Tests](#tests)
 * [Questions](#Questions)
   
 
 ## Installation
-Instructions  
-
+Instructions [here](https://drive.google.com/file/d/1MbPnj3QHqkBBLbrUctpNCseUl0qw1wIo/view)
 
 ## Usage
-Usage  
+This may be used to generate READMEs for your project via the command line.
 
+## Credits
+Many thanks to Richard Kim and Jennifer Nguyen; also stackoverflow.com and markdownguide.org
 
 ## License
-
-Project covered under mit license: choosealicense.com/licenses/mit
+Project covered under MIT license: choosealicense.com/licenses/mit
 
 ## Contributing
-COntribution  
-
-## Tests
-Test instructions  
+To contribute to this project, please email me at the address below. 
 
 ## Questions  
 
